@@ -41,11 +41,9 @@ public class PunchHand : MonoBehaviour
             otherR.AddForceAtPosition(dir * force, avgPoint);
         }
 
-        // Кровь через ObjectPool
         if (BloodPoolManager.Instance != null)
             BloodPoolManager.Instance.SpawnBlood(avgPoint, Quaternion.LookRotation(-transform.forward));
 
-        // Кеширование цели
         if (other.gameObject != lastTargetObject)
         {
             lastTargetObject = other.gameObject;
